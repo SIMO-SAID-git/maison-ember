@@ -1,0 +1,61 @@
+import type { Offer } from '@/types'
+
+const img = (n: string) => `/images/offers/${n}.svg`
+
+export const offers: Offer[] = [
+  {
+    id: 'weekday-lunch',
+    name: 'Weekday lunch',
+    summary: 'Two courses and a drink from the lunch menu, served in under 75 minutes if you need to get back to the office.',
+    validFrom: '2026-09-15',
+    validTo: '2026-12-18',
+    terms: ['Tuesday to Friday, 12:30 to 14:30.', 'Not valid on public holidays or with other offers.', 'Tables of up to six.'],
+    priceNote: '190 MAD per person',
+    image: img('weekday-lunch'),
+    imageAlt: 'A lunch table with a plate of roast chicken and a glass of water',
+  },
+  {
+    id: 'seasonal-tasting',
+    name: 'Seasonal tasting menu',
+    summary: 'Seven courses that follow the market, with a vegetarian version available on request.',
+    validFrom: '2026-10-01',
+    validTo: '2026-12-20',
+    terms: ['Whole table must order the tasting menu.', 'Please tell us about allergies when booking.', 'Wine pairing adds 390 MAD per person.'],
+    priceNote: '780 MAD per person',
+    image: img('seasonal-tasting'),
+    imageAlt: 'A small plate of seared scallops from the tasting menu',
+  },
+  {
+    id: 'anniversary',
+    name: 'Anniversary experience',
+    summary: 'A glass of Champagne on arrival, a window or terrace table and a dessert with a candle, on us.',
+    validFrom: '2026-09-01',
+    validTo: '2027-03-31',
+    terms: ['Book for two guests and select "Anniversary" when reserving.', 'Subject to availability on Friday and Saturday evenings.'],
+    priceNote: 'Included with a dinner booking',
+    image: img('anniversary'),
+    imageAlt: 'Two Champagne glasses on a candlelit table',
+  },
+  {
+    id: 'wine-pairing',
+    name: 'Thursday wine pairing',
+    summary: 'Three glasses chosen by Aurélien to go with a three-course dinner. We change the pairing every week.',
+    validFrom: '2026-09-17',
+    validTo: '2026-12-17',
+    terms: ['Thursdays only, from 18:30.', 'Alcohol-free pairing available at the same price.'],
+    priceNote: '290 MAD added to dinner',
+    image: img('wine-pairing'),
+    imageAlt: 'Three glasses of wine in a row on the bar',
+  },
+  {
+    id: 'early-dinner',
+    name: 'Early dinner',
+    summary: 'Sit down at 18:00 or 18:30 and enjoy three courses at a fixed price. The terrace is lovely at that hour.',
+    validFrom: '2026-10-01',
+    validTo: '2026-11-30',
+    terms: ['Tuesday to Thursday only.', 'Table is yours until 20:15.'],
+    priceNote: '360 MAD per person',
+    image: img('early-dinner'),
+    imageAlt: 'The terrace at dusk with lanterns lit',
+  },
+]

@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-chalk font-sans text-deep antialiased;
+    font-feature-settings: 'kern', 'liga';
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: #e2a72e;
+    color: #0f1f1b;
+  }
+  :focus-visible {
+    outline: 2px solid #25664f;
+    outline-offset: 3px;
+  }
+  .dark-surface :focus-visible {
+    outline-color: #e2a72e;
+  }
+  /* Arabic letters join, so tracking would break them. */
+  [dir='rtl'] * {
+    letter-spacing: normal !important;
+  }
+  /* The native date picker icon is invisible on dark backgrounds without this. */
+  input[type='date'] {
+    color-scheme: light;
+  }
+  .dark-surface input[type='date'] {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-12;
+  }
+  .skip-link {
+    @apply fixed start-4 top-4 z-[200] -translate-y-24 rounded-[3px] bg-saffron px-4 py-3 font-medium text-deep focus:translate-y-0;
+  }
+  .field {
+    @apply w-full rounded-[3px] border border-deep/30 bg-chalk-100 px-4 py-3 text-base text-deep placeholder:text-mute/70;
+  }
+  .field[aria-invalid='true'] {
+    @apply border-ember;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
